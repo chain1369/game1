@@ -22,7 +22,7 @@ export default function Auth() {
       if (isLogin) {
         await signIn(email, password)
       } else {
-        await signUp(email, password, name)
+        await signUp(email, password)
       }
     } finally {
       setLoading(false)
