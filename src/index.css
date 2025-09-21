@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-900 text-white font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* 游戏化按钮样式 */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 
+           text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl 
+           transform hover:scale-105 transition-all duration-200 
+           border border-primary-400/20 hover:border-primary-300/30;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary-600 to-secondary-500 hover:from-secondary-700 hover:to-secondary-600 
+           text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl 
+           transform hover:scale-105 transition-all duration-200 
+           border border-secondary-400/20 hover:border-secondary-300/30;
+  }
+  
+  .btn-neon {
+    @apply bg-dark-800 hover:bg-dark-700 text-neon-blue font-medium px-6 py-3 rounded-lg 
+           border-2 border-neon-blue/30 hover:border-neon-blue/50 
+           shadow-neon hover:shadow-lg transform hover:scale-105 transition-all duration-200;
+  }
+
+  /* 游戏化卡片样式 */
+  .game-card {
+    @apply bg-gradient-to-br from-dark-800 to-dark-900 
+           border border-dark-600/50 rounded-xl shadow-gaming 
+           hover:shadow-xl hover:border-dark-500/70 
+           transform hover:scale-[1.02] transition-all duration-300;
+  }
+  
+  .stat-card {
+    @apply game-card p-6 relative overflow-hidden;
+  }
+  
+  .stat-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-neon-blue to-transparent opacity-50;
+  }
+
+  /* 进度条样式 */
+  .progress-bar {
+    @apply w-full bg-dark-700 rounded-full h-3 overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-neon-blue to-primary-500 rounded-full 
+           shadow-neon transition-all duration-700 ease-out;
+  }
+
+  /* 等级徽章 */
+  .level-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
+           bg-gradient-to-r from-neon-purple to-secondary-500 
+           text-white shadow-neon-purple;
+  }
+
+  /* 技能标签 */
+  .skill-tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
+           bg-dark-700 text-neon-green border border-neon-green/30 
+           hover:bg-dark-600 hover:border-neon-green/50 transition-all duration-200;
+  }
+
+  /* 导航样式 */
+  .nav-link {
+    @apply flex items-center px-4 py-3 text-dark-300 hover:text-white 
+           hover:bg-dark-700/50 rounded-lg transition-all duration-200 
+           border border-transparent hover:border-dark-600;
+  }
+  
+  .nav-link.active {
+    @apply text-neon-blue bg-dark-700/70 border-neon-blue/30 shadow-neon;
+  }
+
+  /* 表单输入样式 */
+  .input-field {
+    @apply w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg 
+           text-white placeholder-dark-400 
+           focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue/50
+           transition-all duration-200;
+  }
+
+  /* 数据可视化容器 */
+  .chart-container {
+    @apply game-card p-6 h-80;
+  }
+
+  /* 霓虹光效文字 */
+  .neon-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple;
+    text-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+  }
+
+  /* 浮动动画 */
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* 脉冲光效 */
+  .pulse-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@layer utilities {
+  /* 滚动条样式 */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #475569 #1e293b;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
+
+  /* 毛玻璃效果 */
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* 渐变边框 */
+  .gradient-border {
+    background: linear-gradient(135deg, #0f172a, #1e293b) padding-box,
+                linear-gradient(135deg, #00f5ff, #bf00ff) border-box;
+    border: 2px solid transparent;
+  }
+}
